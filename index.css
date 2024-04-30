@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+  
+body, html {
+    font-family: segoe ui;
+    font-size: 100%;
+    height: 100%;
+    background-image: url(imagenes/fondo.jpg);
+}
+.escudo {
+  width: 100px;
+  height: 50px;
+  position:relative;
+}
+
+.escudo img {
+  
+  width: 150px; 
+  height: auto ; 
+  
+  position: absolute;
+  top: 160%; 
+  transform: translateY(-50%); 
+  left: 1190px;
+}
+  
+a {
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    transition: background-color 0.16s ease-in;
+    font-family: sans-serif;
+}
+  
+a:hover {
+    background-color: #663394;
+}
+
+/* Navigation bar (contains the mini menu) */
+.navbar-menu {
+    background: linear-gradient(to top, rgba(109, 3, 201, 0.7), rgba(109, 3, 201, 0));
+    margin: 2% auto;
+    max-width: 1000px;
+    width: calc(100%);
+    border-radius: 15px;
+}
+  
+  /* Menu */
+.navbar-menu .menu {
+    display: block;
+    text-align: center;
+}
+  
+  /* List items */
+.navbar-menu .menu li {
+    display: inline-block;
+}
+  
+  /* Submenu activation on hover */
+.navbar-menu .menu li:hover > .submenu {
+    display: block;
+    animation-name: showSubMenu;
+    animation-duration: 0.4s;
+    background-color: #ff2233;
+}
+  
+  /* Submenus */
+.navbar-menu .menu li ul {
+    background-color: #6d03c9;
+    display: none;
+    position: absolute;
+}
+  
+  /* Submenu list items */
+.navbar-menu .menu li ul li {
+    display: block;
+
+}
+.navbar-menu .menu li ul li a:active {
+    animation-name: hideSubMenu;
+    animation-duration: 0.4s;
+}
+
+main{
+    width: 100%;
+    position: relative;
+
+}
+main #planes{
+    background: linear-gradient(to bottom, rgba(109, 3, 201, 0.7), rgba(109, 3, 201, 0));
+    padding-top: 70px;
+    padding-bottom: 70px;
+    margin: 2% auto;
+    max-width: 1300px;
+    width: calc(100%);
+    border-radius: 15px;
+}
+main #planes .container{
+    /*width define el ancho de un elemento*/
+    /*heigth define el alto de un elemento*/
+    width: 1200px;
+    /* margin: 0 auto sirve para centrar un elemento*/
+    margin: 0 auto;
+    /*alineacion de texto tex-aling*/
+    text-align: center;
+
+}
+
+main #planes .container h2{
+    color: yellow;
+    font-size: 40px;
+
+}
+
+main #planes .container .primero{
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    text-align: justify;
+
+}
+
+
+main #planes .container .fila1{
+    /*sirve para ubicar un elemento sobre el otro */
+    display: flex;
+    /*justify-content sirve para organizar el contenido de manera central: flex-end= izquierda, felz start: derecha, center: centro*/
+    justify-content: space-between;
+    margin-top: 50px;
+
+}
+main #planes .container .fila2{
+    /*sirve para ubicar un elemento sobre el otro */
+    display: flex;
+    /*justify-content sirve para organizar el contenido de manera central: flex-end= izquierda, felz start: derecha, center: centro*/
+    justify-content: space-between;
+    margin-top: 50px;
+
+}
+
+.card {
+    overflow: visible;
+    width: 190px;
+    height: 254px;
+  }
+  
+  .content {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms;
+    box-shadow: 0px 0px 10px 1px #000000ee;
+    border-radius: 5px;
+  }
+  
+  .front, .back {
+    background-color: #151515;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .back {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .back::before {
+    position: absolute;
+    content: ' ';
+    display: block;
+    width: 160px;
+    height: 160%;
+    background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
+    animation: rotation_481 5000ms infinite linear;
+  }
+  
+  .back-content {
+    position: absolute;
+    width: 99%;
+    height: 99%;
+    background-color: #151515;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .card:hover .content {
+    transform: rotateY(180deg);
+  }
+  
+  @keyframes rotation_481 {
+    0% {
+      transform: rotateZ(0deg);
+    }
+  
+    0% {
+      transform: rotateZ(360deg);
+    }
+  }
+  
+  .front {
+    transform: rotateY(180deg);
+    color: white;
+  }
+  
+  .front .front-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .front-content .badge {
+    background-color: #00000055;
+    padding: 2px 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+    width: fit-content;
+  }
+  
+  .card-footer {
+    color: #ffffff88;
+    margin-top: 5px;
+    font-size: 8px;
+  }
+  
+  .front .img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #ffbb66;
+    position: relative;
+    filter: blur(15px);
+    animation: floating 2600ms infinite linear;
+  }
+  
+  #bottom {
+    background-color: #ff8866;
+    left: 50px;
+    top: 0px;
+    width: 150px;
+    height: 150px;
+    animation-delay: -800ms;
+  }
+  
+  #right {
+    background-color: #ff2233;
+    left: 160px;
+    top: -80px;
+    width: 30px;
+    height: 30px;
+    animation-delay: -1800ms;
+  }
+  
+  @keyframes floating {
+    0% {
+      transform: translateY(0px);
+    }
+  
+    50% {
+      transform: translateY(10px);
+    }
+  
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  footer {
+    background: linear-gradient(to bottom, rgba(109, 3, 201, 0.7), rgba(109, 3, 201, 0));
+      color: #ffffff;
+      margin-bottom: 5px;
+      padding-top: 45px;
+      padding-bottom: 70px;
+      text-align: center;  
+      font-size: 22px;
+  }
